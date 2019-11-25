@@ -1,0 +1,184 @@
+package swing;
+
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import java.awt.Font;
+import java.awt.Color;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
+
+public class bmi {
+
+	private JFrame frame;
+	private JTextField tf1;
+	private JTextField tf2;
+	private JTextField tf3;
+	private JTable table;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					bmi window = new bmi();
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the application.
+	 */
+	public bmi() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frame = new JFrame();
+		frame.getContentPane().setBackground(new Color(255, 215, 0));
+		frame.getContentPane().setForeground(Color.BLACK);
+		frame.setBounds(100, 100, 342, 552);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().setLayout(null);
+		
+		JLabel lblBodyMassIndex = new JLabel("                 Body Mass Index");
+		lblBodyMassIndex.setBackground(new Color(0, 255, 0));
+		lblBodyMassIndex.setForeground(Color.BLUE);
+		lblBodyMassIndex.setFont(new Font("Tahoma", Font.BOLD, 16));
+		lblBodyMassIndex.setBounds(10, 11, 306, 35);
+		frame.getContentPane().add(lblBodyMassIndex);
+		
+		JPanel panel = new JPanel();
+		panel.setBackground(new Color(50, 205, 50));
+		panel.setBounds(10, 57, 306, 255);
+		frame.getContentPane().add(panel);
+		panel.setLayout(null);
+		
+		JLabel lblHeightm = new JLabel("Height(m)");
+		lblHeightm.setFont(new Font("Tahoma", Font.BOLD, 13));
+		lblHeightm.setBounds(28, 77, 89, 26);
+		panel.add(lblHeightm);
+		
+		JLabel lblNewLabel = new JLabel("Weight(kg)");
+		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 13));
+		lblNewLabel.setBounds(26, 114, 77, 19);
+		panel.add(lblNewLabel);
+		
+		JLabel lblBmi = new JLabel("BMI");
+		lblBmi.setFont(new Font("Tahoma", Font.BOLD, 13));
+		lblBmi.setBounds(26, 166, 56, 19);
+		panel.add(lblBmi);
+		
+		tf1 = new JTextField();
+		tf1.setBounds(129, 77, 123, 26);
+		panel.add(tf1);
+		tf1.setColumns(10);
+		
+		tf2 = new JTextField();
+		tf2.setBounds(129, 114, 123, 26);
+		panel.add(tf2);
+		tf2.setColumns(10);
+		
+		tf3 = new JTextField();
+		tf3.setBackground(new Color(255, 255, 0));
+		tf3.setBounds(73, 163, 70, 26);
+		panel.add(tf3);
+		tf3.setColumns(10);
+		
+		JLabel lb1 = new JLabel("");
+		lb1.setBounds(164, 159, 132, 26);
+		panel.add(lb1);
+		
+		JButton cal = new JButton("Calculate");
+		cal.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String str1=tf1.getText();
+				String str2=tf2.getText();
+				float h=Float.parseFloat(str1);
+				float w=Float.parseFloat(str2);
+				float bmi=w/(h*h);
+				if(bmi<18.5)
+				{ 
+					lb1.setText("Underweight");
+					
+				}
+				else if(bmi>=18.5&&bmi<=24.5)
+				{
+					lb1.setText("Normalweight");
+				}
+				else if(bmi>=25&&bmi<=29.9)
+				{
+					lb1.setText("Overweight");
+				}
+				else
+				{
+					lb1.setText("Obese");
+				}
+					
+				String str3=String.valueOf(bmi);
+				tf3.setText(str3);
+				
+				
+			}
+		});
+		cal.setBounds(52, 204, 77, 26);
+		panel.add(cal);
+		
+		JButton btnNewButton_1 = new JButton("Clear");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				tf1.setText("");
+				tf2.setText("");
+				tf3.setText("");
+				lb1.setText("");
+			}
+		});
+		btnNewButton_1.setBounds(131, 204, 70, 26);
+		panel.add(btnNewButton_1);
+		
+		JButton btnExit = new JButton("Exit");
+		btnExit.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				System.exit(0);
+				
+				
+			}
+		});
+		btnExit.setBounds(207, 203, 70, 26);
+		panel.add(btnExit);
+		
+		JPanel panel_1 = new JPanel();
+		panel_1.setBackground(new Color(50, 205, 50));
+		panel_1.setBounds(10, 323, 306, 180);
+		frame.getContentPane().add(panel_1);
+		panel_1.setLayout(null);
+		
+		table = new JTable();
+		table.setModel(new DefaultTableModel(
+			new Object[][] {
+				{"Underweight", "Normalweight", "Overweight", "     Obese"},
+				{"     <18.5", "18.5 to 24.9", "25 to 29.9", ">30"},
+			},
+			new String[] {
+				"New column", "New column", "New column", "New column"
+			}
+		));
+		table.setBounds(10, 92, 286, 32);
+		panel_1.add(table);
+	}
+}
