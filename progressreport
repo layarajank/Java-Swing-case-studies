@@ -20,8 +20,8 @@ import javax.swing.DefaultComboBoxModel;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class progressreport {
-
+public class progressreport 
+{
 	private JFrame frame;
 	private JTextField sid;
 	private JTextField fn;
@@ -44,13 +44,18 @@ public class progressreport {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
+	public static void main(String[] args)
+	{
+		EventQueue.invokeLater(new Runnable() 
+		{
+			public void run()
+			{
+				try
+				{
 					progressreport window = new progressreport();
 					window.frame.setVisible(true);
-				} catch (Exception e) {
+				} catch (Exception e)
+				{
 					e.printStackTrace();
 				}
 			}
@@ -67,7 +72,8 @@ public class progressreport {
 	/**
 	 * Initialize the contents of the frame.
 	 */
-	private void initialize() {
+	private void initialize()
+	{
 		frame = new JFrame();
 		frame.getContentPane().setFont(new Font("Tahoma", Font.BOLD, 12));
 		frame.getContentPane().setBackground(Color.PINK);
@@ -255,8 +261,10 @@ public class progressreport {
 		panel_1.add(ta1);
 		
 		JButton btnClear = new JButton("CLEAR");
-		btnClear.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
+		btnClear.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent e) 
+			{
 				ta1.setText("");
 				
 			}
@@ -268,22 +276,25 @@ public class progressreport {
 		table = new JTable();
 		table.setFont(new Font("Tahoma", Font.BOLD, 11));
 		table.setModel(new DefaultTableModel(
-			new Object[][] {
+			new Object[][]
+			{
 				{"  Student ID", "Course name", "Maths", "English", "Biology", "Computer", "Chemistry", "Physics", "Tamil", "  Malayalam", " Total", "Average", "Ranking"},
 				{null, null, null, null, null, null, null, null, null, null, null, null, null},
 			},
-			new String[] {
+			new String[]
+			{
 				"Student ID", "Course name", "Maths", "English", "Biology", "Computer", "Chemistry", "Physics", "Tamil", "Malayalam", "Total", "Average", "Ranking"
 			}
-		));
+		 ));
 		table.setBounds(10, 353, 930, 152);
 		frame.getContentPane().add(table);
 		
 		JButton btnAddReport = new JButton("Add Report");
-		btnAddReport.addActionListener(new ActionListener() {
+		btnAddReport.addActionListener(new ActionListener()
+		{
 			private String str13;
-
-			public void actionPerformed(ActionEvent arg0) {
+			public void actionPerformed(ActionEvent arg0)
+			{
 				String str1=sid.getText();
 				String str2=(String) cb.getSelectedItem();
 				String str3=mt.getText();
@@ -329,8 +340,10 @@ public class progressreport {
 		frame.getContentPane().add(btnAddReport);
 		
 		JButton btnDelete = new JButton("Delete");
-		btnDelete.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
+		btnDelete.addActionListener(new ActionListener()
+	        {
+			public void actionPerformed(ActionEvent arg0) 
+			{
 				/*int row=table.getSelectedRow();
 				DefaultTableModel a=(DefaultTableModel) table.getModel();
 				a.removeRow(row);*/
@@ -359,8 +372,10 @@ public class progressreport {
 		frame.getContentPane().add(btnDelete);
 		
 		JButton btnShowReport = new JButton("Show Report");
-		btnShowReport.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
+		btnShowReport.addActionListener(new ActionListener() 
+		{
+			public void actionPerformed(ActionEvent e) 
+			{
 				ta1.append("Student Record \n");
 				String name=fn.getText();
 				String nam=sn.getText();
@@ -378,11 +393,6 @@ public class progressreport {
 				ta1.append("\n Total Score\t\t\t\t"+ts.getText());
 				ta1.append("\n Average\t\t\t\t"+av.getText());
 				ta1.append("\n Ranking\t\t\t\t"+rk.getText());
-				
-				
-				
-				
-				
 			}
 			
 		});
@@ -391,8 +401,10 @@ public class progressreport {
 		frame.getContentPane().add(btnShowReport);
 		
 		JButton btnExit = new JButton("Exit");
-		btnExit.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
+		btnExit.addActionListener(new ActionListener() 
+		{
+			public void actionPerformed(ActionEvent e) 
+			{
 				System.exit(0);
 			}
 		});
@@ -402,8 +414,10 @@ public class progressreport {
 		frame.getContentPane().add(btnExit);
 		
 		JButton btnReset = new JButton("Reset");
-		btnReset.addActionListener(new ActionListener() {
-			 public void actionPerformed(ActionEvent e) {
+		btnReset.addActionListener(new ActionListener()
+		{
+			 public void actionPerformed(ActionEvent e) 
+			 {
 				sid.setText("");
 				fn.setText("");
 				sn.setText("");
@@ -420,8 +434,6 @@ public class progressreport {
 				mal.setText("");
 				av.setText("");
 				cb.setSelectedIndex(0);
-				
-				
 			}
 		});
 		btnReset.setForeground(new Color(153, 102, 255));
