@@ -1,29 +1,31 @@
 package swing;
-
 import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-
-public class tempconverter {
-
+public class tempconverter 
+{
 	private JFrame frame;
 	private JTextField textField;
 
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
+	public static void main(String[] args) 
+	{
+		EventQueue.invokeLater(new Runnable() 
+	        {
+			public void run() 
+			{
+				try
+				{
 					tempconverter window = new tempconverter();
 					window.frame.setVisible(true);
-				} catch (Exception e) {
+				} catch (Exception e) 
+				{
 					e.printStackTrace();
 				}
 			}
@@ -33,14 +35,16 @@ public class tempconverter {
 	/**
 	 * Create the application.
 	 */
-	public tempconverter() {
+	public tempconverter()
+	{
 		initialize();
 	}
 
 	/**
 	 * Initialize the contents of the frame.
 	 */
-	private void initialize() {
+	private void initialize()
+	{
 		frame = new JFrame();
 		frame.setBounds(100, 100, 450, 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -64,22 +68,24 @@ public class tempconverter {
 		frame.getContentPane().add(lblNewLabel);
 		
 		JButton btnCelsius = new JButton("CELSIUS");
-		btnCelsius.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
+		btnCelsius.addActionListener(new ActionListener() 
+		{
+			public void actionPerformed(ActionEvent e)
+			{
 				float x=Float.parseFloat(textField.getText());
 				float cel=(float)(x-273.15);
 				String res=String.valueOf(cel);
-				lblNewLabel.setText(res);
-				
-				
+				lblNewLabel.setText(res);	
 			}
 		});
 		btnCelsius.setBounds(102, 176, 89, 23);
 		frame.getContentPane().add(btnCelsius);
 		
 		JButton btnFhrnht = new JButton("FHRNHT");
-		btnFhrnht.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
+		btnFhrnht.addActionListener(new ActionListener() 
+		{
+			public void actionPerformed(ActionEvent e) 
+			{
 				float x=Float.parseFloat(textField.getText());
 				float frn=(float)(((x-273.15)*9)/5)+32;
 				String res=String.valueOf(frn);
@@ -88,8 +94,5 @@ public class tempconverter {
 		});
 		btnFhrnht.setBounds(246, 176, 89, 23);
 		frame.getContentPane().add(btnFhrnht);
-		
-		
 	}
-
 }
