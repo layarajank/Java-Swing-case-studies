@@ -12,8 +12,8 @@ import javax.swing.DefaultComboBoxModel;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class currencyconv {
-
+public class currencyconv 
+{
 	private JFrame frame;
 	private JTextField tf1;
 	private JTextField tf2;
@@ -22,13 +22,19 @@ public class currencyconv {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
+	public static void main(String[] args)
+	{
+		EventQueue.invokeLater(new Runnable()
+		{
+			public void run()
+			{
+				try 
+				{
 					currencyconv window = new currencyconv();
 					window.frame.setVisible(true);
-				} catch (Exception e) {
+				} 
+				catch (Exception e) 
+				{
 					e.printStackTrace();
 				}
 			}
@@ -38,7 +44,8 @@ public class currencyconv {
 	/**
 	 * Create the application.
 	 */
-	public currencyconv() {
+	public currencyconv() 
+	{
 		initialize();
 	}
 
@@ -46,7 +53,8 @@ public class currencyconv {
 	 * Initialize the contents of the frame.
 	 */
 	@SuppressWarnings("unchecked")
-	private void initialize() {
+	private void initialize()
+	{
 		frame = new JFrame();
 		frame.setBounds(100, 100, 450, 337);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -88,8 +96,10 @@ public class currencyconv {
 		frame.getContentPane().add(cb2);
 		
 		JButton btnNewButton = new JButton("Convert");
-		btnNewButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
+		btnNewButton.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent arg0)
+			{
 				/*Object selectedItem1=cb1.getSelectedItem();
                 String str1=( selectedItem1.toString());
 				
@@ -107,7 +117,7 @@ public class currencyconv {
 					{
 						result =(float) (input * 0.014);
 						String res=String.valueOf(result);
-			            tf2.setText("$ "+res);
+			                        tf2.setText("$ "+res);
 					}
 					else
 					{
@@ -115,13 +125,12 @@ public class currencyconv {
 						{
 							result = (float)(input * 1.51);
 							String res=String.valueOf(result);
-				            tf2.setText(res);
+				                        tf2.setText(res);
 						}
-
 					}
 				}
-					else if(cb1.getSelectedItem()=="YEN")
-					{
+				else if(cb1.getSelectedItem()=="YEN")
+				{
 						if(cb2.getSelectedItem()=="YEN")
 						{
 							tf2.setText(tf1.getText());
@@ -130,7 +139,7 @@ public class currencyconv {
 						{
 							result =(float) (input * 0.66);
 							String res=String.valueOf(result);
-				            tf2.setText(res);
+				                        tf2.setText(res);
 						}
 						else
 						{
@@ -138,15 +147,15 @@ public class currencyconv {
 							{
 								result = (float)(input * 0.013);
 								String res=String.valueOf(result);
-					            tf2.setText("$"+res);
+					                        tf2.setText("$"+res);
 							}
 						}
 					
-				    }
-					else
-					{
-					if(cb1.getSelectedItem()=="DOLLAR")
-					{
+				   }
+				   else
+				   {
+					  if(cb1.getSelectedItem()=="DOLLAR")
+					   {
 						if(cb2.getSelectedItem()=="DOLLAR")
 						{
 							tf2.setText(tf1.getText());
@@ -155,7 +164,7 @@ public class currencyconv {
 						{
 							result =(float)(input * 71.78);
 							String res=String.valueOf(result);
-				            tf2.setText(res);
+				                        tf2.setText(res);
 						}
 						else
 						{
@@ -163,17 +172,13 @@ public class currencyconv {
 							{
 								result = (float)(input * 76.7);;
 								String res=String.valueOf(result);
-					            tf2.setText(res);
+					                         tf2.setText(res);
 							}
 						}
 					
-				    }
-					}
-				
-				
-				
-			
-			}
+				           }
+				 }  
+			   }
 			
 		});
 		btnNewButton.setBounds(143, 177, 104, 25);
@@ -185,8 +190,10 @@ public class currencyconv {
 		tf2.setColumns(10);
 		
 		JButton btnNewButton_1 = new JButton("Exit");
-		btnNewButton_1.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
+		btnNewButton_1.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent e) 
+			{
 				System.exit(0);;
 			}
 		});
@@ -198,5 +205,4 @@ public class currencyconv {
 		lblTotalAmountConvert.setBounds(28, 219, 181, 17);
 		frame.getContentPane().add(lblTotalAmountConvert);
 	}
-
 }
