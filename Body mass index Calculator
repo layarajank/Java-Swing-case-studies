@@ -25,13 +25,19 @@ public class bmi {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
+	public static void main(String[] args) 
+	{
+		EventQueue.invokeLater(new Runnable()
+	         {
+			public void run()
+			{
+				try
+				{
 					bmi window = new bmi();
 					window.frame.setVisible(true);
-				} catch (Exception e) {
+				} 
+				catch (Exception e)
+				{
 					e.printStackTrace();
 				}
 			}
@@ -41,14 +47,16 @@ public class bmi {
 	/**
 	 * Create the application.
 	 */
-	public bmi() {
+	public bmi()
+	{
 		initialize();
 	}
 
 	/**
 	 * Initialize the contents of the frame.
 	 */
-	private void initialize() {
+	private void initialize()
+	{
 		frame = new JFrame();
 		frame.getContentPane().setBackground(new Color(255, 215, 0));
 		frame.getContentPane().setForeground(Color.BLACK);
@@ -105,8 +113,10 @@ public class bmi {
 		panel.add(lb1);
 		
 		JButton cal = new JButton("Calculate");
-		cal.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
+		cal.addActionListener(new ActionListener()
+	        {
+			public void actionPerformed(ActionEvent e)
+			{
 				String str1=tf1.getText();
 				String str2=tf2.getText();
 				float h=Float.parseFloat(str1);
@@ -140,8 +150,10 @@ public class bmi {
 		panel.add(cal);
 		
 		JButton btnNewButton_1 = new JButton("Clear");
-		btnNewButton_1.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
+		btnNewButton_1.addActionListener(new ActionListener()
+	        {
+			public void actionPerformed(ActionEvent e)
+			{
 				tf1.setText("");
 				tf2.setText("");
 				tf3.setText("");
@@ -152,8 +164,10 @@ public class bmi {
 		panel.add(btnNewButton_1);
 		
 		JButton btnExit = new JButton("Exit");
-		btnExit.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
+		btnExit.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent e)
+			{
 				System.exit(0);
 				
 				
@@ -170,14 +184,13 @@ public class bmi {
 		
 		table = new JTable();
 		table.setModel(new DefaultTableModel(
-			new Object[][] {
+			new Object[][]
+			{
 				{"Underweight", "Normalweight", "Overweight", "     Obese"},
 				{"     <18.5", "18.5 to 24.9", "25 to 29.9", ">30"},
 			},
-			new String[] {
-				"New column", "New column", "New column", "New column"
-			}
-		));
+			new String[] {"New column", "New column", "New column", "New column"}
+		        ));
 		table.setBounds(10, 92, 286, 32);
 		panel_1.add(table);
 	}
