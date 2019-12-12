@@ -8,7 +8,8 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.lang.Math;
-public class calculator {
+public class calculator
+{
 
 	private JFrame frame;
 	private JTextField tf;
@@ -46,13 +47,19 @@ public class calculator {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
+	public static void main(String[] args)
+	{
+		EventQueue.invokeLater(new Runnable()
+	        {
+			public void run()
+			{
+				try 
+				{
 					calculator window = new calculator();
 					window.frame.setVisible(true);
-				} catch (Exception e) {
+				} 
+				catch (Exception e) 
+				{
 					e.printStackTrace();
 				}
 			}
@@ -62,14 +69,16 @@ public class calculator {
 	/**
 	 * Create the application.
 	 */
-	public calculator() {
+	public calculator()
+	{
 		initialize();
 	}
 
 	/**
 	 * Initialize the contents of the frame.
 	 */
-	private void initialize() {
+	private void initialize()
+	{
 		frame = new JFrame();
 		frame.setBounds(100, 100, 450, 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -85,8 +94,10 @@ public class calculator {
 		tf.setColumns(10);
 		
 		sqrt = new JButton("sqrt");
-		sqrt.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
+		sqrt.addActionListener(new ActionListener() 
+	         {
+			public void actionPerformed(ActionEvent e)
+			{
 				clr=1;
 				str1=tf.getText();
 				float a=Float.parseFloat(str1);
@@ -99,8 +110,10 @@ public class calculator {
 		frame.getContentPane().add(sqrt);
 		
 		btnx = new JButton("1/X");
-		btnx.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
+		btnx.addActionListener(new ActionListener()
+	        {
+			public void actionPerformed(ActionEvent e)
+			{
 				clr=1;
 				str1=tf.getText();
 				float a=Float.parseFloat(str1);
@@ -114,8 +127,10 @@ public class calculator {
 		frame.getContentPane().add(btnx);
 		
 		sin = new JButton("sin");
-		sin.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
+		sin.addActionListener(new ActionListener()
+	        {
+			public void actionPerformed(ActionEvent e)
+			{
 				clr=1;
 				str1=tf.getText();
 				tf.setText("");
@@ -132,8 +147,10 @@ public class calculator {
 		frame.getContentPane().add(sin);
 		
 		b7 = new JButton("7");
-		b7.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
+		b7.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent e)
+			{
 				if(clr==1)
 				{
 					tf.setText("");
@@ -146,8 +163,10 @@ public class calculator {
 		frame.getContentPane().add(b7);
 		
 		b8 = new JButton("8");
-		b8.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
+		b8.addActionListener(new ActionListener() 
+		{
+			public void actionPerformed(ActionEvent e)
+			{
 				if(clr==1)
 				{
 					tf.setText("");
@@ -160,8 +179,10 @@ public class calculator {
 		frame.getContentPane().add(b8);
 		
 		b9 = new JButton("9");
-		b9.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
+		b9.addActionListener(new ActionListener() 
+	        {
+			public void actionPerformed(ActionEvent e)
+			 {
 				if(clr==1)
 				{
 					tf.setText("");
@@ -174,8 +195,10 @@ public class calculator {
 		frame.getContentPane().add(b9);
 		
 		div = new JButton("/");
-		div.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
+		div.addActionListener(new ActionListener()
+	        {
+			public void actionPerformed(ActionEvent e)
+			{
 				str1=tf.getText();
 				tf.setText("");
 				df=0;
@@ -186,8 +209,10 @@ public class calculator {
 		frame.getContentPane().add(div);
 		
 		percntge = new JButton("% ");
-		percntge.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
+		percntge.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent e) 
+			{
 				str1=tf.getText();
 				tf.setText("");
 				df=0;
@@ -198,8 +223,10 @@ public class calculator {
 		frame.getContentPane().add(percntge);
 		
 		pwr = new JButton("x^y");
-		pwr.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
+		pwr.addActionListener(new ActionListener() 
+		{
+			public void actionPerformed(ActionEvent e) 
+			{
 				str1=tf.getText();
 				tf.setText("");
 				df=0;
@@ -210,8 +237,10 @@ public class calculator {
 		frame.getContentPane().add(pwr);
 		
 		sqr = new JButton("x^2");
-		sqr.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
+		sqr.addActionListener(new ActionListener() 
+	        {
+			public void actionPerformed(ActionEvent e)
+			{
 				clr=1;
 				str1=tf.getText();
 				float a=Float.parseFloat(str1);
@@ -224,8 +253,10 @@ public class calculator {
 		frame.getContentPane().add(sqr);
 		
 		exp = new JButton("Exp");
-		exp.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
+		exp.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent e)
+			{
 				clr=1;
 				str1=tf.getText();
 				double a=Float.parseFloat(str1);
@@ -238,8 +269,10 @@ public class calculator {
 		frame.getContentPane().add(exp);
 		
 		ln = new JButton("ln");
-		ln.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
+		ln.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent e) 
+			{
 				clr=1;
 				str1=tf.getText();
 				double a=Float.parseFloat(str1);
@@ -252,8 +285,10 @@ public class calculator {
 		frame.getContentPane().add(ln);
 		
 		fact = new JButton("n!");
-		fact.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
+		fact.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent e) 
+			{
 				clr=1;
 				str1=tf.getText();
 				float a=Float.parseFloat(str1);
@@ -274,8 +309,10 @@ public class calculator {
 		frame.getContentPane().add(fact);
 		
 		cos = new JButton("cos");
-		cos.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
+		cos.addActionListener(new ActionListener() 
+		{
+			public void actionPerformed(ActionEvent e) 
+			{
 				clr=1;
 				str1=tf.getText();
 				tf.setText("");
@@ -291,8 +328,10 @@ public class calculator {
 		frame.getContentPane().add(cos);
 		
 		sec = new JButton("sec");
-		sec.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
+		sec.addActionListener(new ActionListener()
+	        {
+			public void actionPerformed(ActionEvent e)
+			{
 				clr=1;
 				str1=tf.getText();
 				tf.setText("");
@@ -308,8 +347,10 @@ public class calculator {
 		frame.getContentPane().add(sec);
 		
 		tan = new JButton("tan");
-		tan.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
+		tan.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent e)
+			{
 				clr=1;
 				str1=tf.getText();
 				tf.setText("");
@@ -324,8 +365,10 @@ public class calculator {
 		frame.getContentPane().add(tan);
 		
 		b4 = new JButton("4");
-		b4.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
+		b4.addActionListener(new ActionListener() 
+		{
+			public void actionPerformed(ActionEvent e)
+			{
 				if(clr==1)
 				{
 					tf.setText("");
@@ -339,8 +382,10 @@ public class calculator {
 		frame.getContentPane().add(b4);
 		
 		b5 = new JButton("5");
-		b5.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
+		b5.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent e) 
+			{
 				if(clr==1)
 				{
 					tf.setText("");
@@ -353,8 +398,10 @@ public class calculator {
 		frame.getContentPane().add(b5);
 		
 		b6 = new JButton("6");
-		b6.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
+		b6.addActionListener(new ActionListener() 
+		{
+			public void actionPerformed(ActionEvent e) 
+			{
 				if(clr==1)
 				{
 					tf.setText("");
@@ -367,8 +414,10 @@ public class calculator {
 		frame.getContentPane().add(b6);
 		
 		mul = new JButton("*");
-		mul.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
+		mul.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent e) 
+			{
 				str1=tf.getText();
 				tf.setText("");
 				df=0;
@@ -379,9 +428,10 @@ public class calculator {
 		frame.getContentPane().add(mul);
 		
 		b1 = new JButton("1");
-		b1.addActionListener(new ActionListener() {
-			
-			public void actionPerformed(ActionEvent e) {
+		b1.addActionListener(new ActionListener() 
+		{
+			public void actionPerformed(ActionEvent e)
+			{
 				if(clr==1)
 				{
 					tf.setText("");
@@ -394,8 +444,10 @@ public class calculator {
 		frame.getContentPane().add(b1);
 		
 		b2 = new JButton("2");
-		b2.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
+		b2.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent e) 
+			{
 				if(clr==1)
 				{
 					tf.setText("");
@@ -409,8 +461,10 @@ public class calculator {
 		frame.getContentPane().add(b2);
 		
 		b3 = new JButton("3");
-		b3.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
+		b3.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent arg0)
+			{
 				if(clr==1)
 				{
 					tf.setText("");
@@ -423,8 +477,10 @@ public class calculator {
 		frame.getContentPane().add(b3);
 		
 		add = new JButton("+");
-		add.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
+		add.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent e) 
+			{
 				str1=tf.getText();
 				tf.setText("");
 				df=0;
@@ -435,8 +491,10 @@ public class calculator {
 		frame.getContentPane().add(add);
 		
 		b0 = new JButton("0");
-		b0.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
+		b0.addActionListener(new ActionListener() 
+		{
+			public void actionPerformed(ActionEvent e)
+			{
 				if(clr==1)
 				{
 					tf.setText("");
@@ -451,8 +509,10 @@ public class calculator {
 		frame.getContentPane().add(b0);
 		
 		bp = new JButton(".");
-		bp.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
+		bp.addActionListener(new ActionListener() 
+		{
+			public void actionPerformed(ActionEvent e)
+			{
 				if(clr==1)
 				{
 					tf.setText("");
@@ -470,8 +530,10 @@ public class calculator {
 		frame.getContentPane().add(bp);
 		
 		equals = new JButton("=");
-		equals.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
+		equals.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent e) 
+			{
 				String str2=tf.getText();
 				tf.setText("");
 				df=0;
@@ -510,21 +572,21 @@ public class calculator {
 					
 				}
 				if(opp.equals("per"))
-			      {
+			        {
 					float c=(a*b)/100;
 					String res=String.valueOf(c);
 					tf.setText(res);
-					}
-				
-				
+				}
 			}
 		});
 		equals.setBounds(335, 216, 45, 35);
 		frame.getContentPane().add(equals);
 		
 		sub = new JButton("_");
-		sub.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
+		sub.addActionListener(new ActionListener() 
+	        {
+			public void actionPerformed(ActionEvent e)
+			{
 				str1=tf.getText();
 				tf.setText("");
 				df=0;
