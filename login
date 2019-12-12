@@ -10,7 +10,8 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JPasswordField;
 
-public class sampleprgrm {
+public class sampleprgrm
+{
 
 	private JFrame frame;
 	private JTextField txtUsername;
@@ -21,13 +22,19 @@ public class sampleprgrm {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
+	public static void main(String[] args) 
+	{
+		EventQueue.invokeLater(new Runnable()
+	        {
+			public void run() 
+			{
+				try 
+				{
 					sampleprgrm window = new sampleprgrm();
 					window.frame.setVisible(true);
-				} catch (Exception e) {
+				} 
+				catch (Exception e)
+				{
 					e.printStackTrace();
 				}
 			}
@@ -37,14 +44,16 @@ public class sampleprgrm {
 	/**
 	 * Create the application.
 	 */
-	public sampleprgrm() {
+	public sampleprgrm() 
+	{
 		initialize();
 	}
 
 	/**
 	 * Initialize the contents of the frame.
 	 */
-	private void initialize() {
+	private void initialize()
+	{
 		frame = new JFrame();
 		frame.setBounds(100, 100, 450, 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -76,8 +85,10 @@ public class sampleprgrm {
 		frame.getContentPane().add(passwordField);
 		
 		JButton btnSubmit = new JButton("submit");
-		btnSubmit.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
+		btnSubmit.addActionListener(new ActionListener()
+	        {
+			public void actionPerformed(ActionEvent arg0)
+			{
 			String str="laya";
 			String str1="123";
 			String pwd=""+new String(passwordField.getPassword());
@@ -86,16 +97,11 @@ public class sampleprgrm {
 			 lblNewLabel.setText("Login successfull");
 			}
 			else
-			
 			lblNewLabel.setText("Login not successfull");
-		
 			}
 			
 		});
 		btnSubmit.setBounds(194, 159, 89, 23);
 		frame.getContentPane().add(btnSubmit);
-		
-		
-		
 	}
 }
